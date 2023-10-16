@@ -1,13 +1,20 @@
-f = open('24.txt')
+f = open('24_demo.txt')
 data = f.readline()
-shelf = {}
-for i in range(len(data) - 1):
-    if data[i] == 'E':
-        if data[i+1] not in shelf.keys():
-            shelf[data[i+1]] = 0
-        shelf[data[i+1]] += 1
-mass = []
-for key in shelf.keys():
-    mass.append([key, shelf[key]])
-mass = sorted(mass, key=lambda x: x[1])
-print(mass[-1][0])
+mx = 0
+ln = 0
+for i in range(len(data)):
+    if data[i] == 'Z':
+        ln += 1
+        ind = i + 1
+        try:
+            nxt = data[ind]
+            while nxt == 'Z':
+                ln += 1
+                ind += 1
+                nxt = data[ind]
+        except:
+            pass
+        if ln > mx:
+            mx = ln
+        ln = 0
+print(mx)
