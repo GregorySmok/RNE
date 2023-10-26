@@ -1,4 +1,4 @@
-with open('27990_B.txt') as file:
+with open('DATA/27990_B.txt') as file:
     data = [int(i) for i in file]
 count = 0
 for i in range(1, len(data) - 1):

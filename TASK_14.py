@@ -1,6 +1,6 @@
-data = 9**8*3**20-3**10-3
+data = 49**6 + 7**18-21
 rebuild = ''
 while data != 0:
-    rebuild += str(data % 3)
-    data //= 3
-print(rebuild.count('2'))
+    rebuild += str(data % 7)
+    data //= 7
+print(rebuild.count('6'))
