@@ -1,7 +1,7 @@
-print('z w x y')
+print('x z y w')
 for x in (0, 1):
     for y in (0, 1):
         for w in (0, 1):
             for z in (0, 1):
-                if (x or not (y)) and (y != z) and not (w):
+                if not (not (x <= z) or (y == w) or y):
                     print(x, z, y, w)
