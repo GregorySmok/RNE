@@ -1,2 +1,1 @@
-a = 7.5
-print(a.__class__ == float)
+print(int('3112', 4))
