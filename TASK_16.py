@@ -1,11 +1,10 @@
-import sys
-sys.setrecursionlimit(10**6)
-
-
 def f(n):
     if n == 1:
         return 1
-    return n * f(n-1) - 1
+    if n == 2:
+        return 2
+    if n == 3:
+        return 3
+    return f(n-3)*n
 
-
-print(f(1000)/f(997))
+print(f(10))

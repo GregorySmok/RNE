@@ -1,8 +1,6 @@
-for n in range(1, 1000000000):
-    n2 = bin(n)[2:]
-    n2 = n2.replace('0', 'q').replace('1', '0').replace('q', '1')
-    while len(n2) > 1 and n2[0] != '1':
-        n2 = n2[1::]
-    if n - int(n2, 2) == 979: 
+for n in range(100, 1000):
+    f = int(str(n)[0]) * int(str(n)[1])
+    s = int(str(n)[1]) * int(str(n)[2])
+    ans = ''.join(sorted([str(f), str(s)], key=int))
+    if ans == '621':
         print(n)
-        break
