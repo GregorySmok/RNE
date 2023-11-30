@@ -1,13 +1,18 @@
-f = open('DATA/24.txt')
-data = f.readline()
-mx = 0
-ln = ''
-for i in range(len(data)):
-    if data[i] != 'E':
-        ln += data[i]
+with open('DATA/1_24.txt') as file:
+    data = file.readline().replace('TT', '*')
+count_TT = 0
+unstr = ''
+minlen = 10000000000000
+for el in data:
+    if count_TT == 150:
+        minlen = min(minlen, len(unstr))
+        unstr = ''
+        count_TT = 0
+    if el == '*':
+        unstr += 'TT'
+        count_TT += 1
     else:
-        if ln.count('A') >= 3:
-            if len(ln) > mx:
-                mx = len(ln)
-        ln = ''
-print(mx)
+        unstr += el
+print(minlen)
+
+    
