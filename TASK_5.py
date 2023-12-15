@@ -1,6 +1,9 @@
-for n in range(100, 1000):
-    f = int(str(n)[0]) * int(str(n)[1])
-    s = int(str(n)[1]) * int(str(n)[2])
-    ans = ''.join(sorted([str(f), str(s)], key=int))
-    if ans == '621':
-        print(n)
+minans = []
+for n in range(1000, 10000):
+    s1 = int(str(n)[0]) + int(str(n)[1])
+    s2 = int(str(n)[2]) + int(str(n)[3])
+    ans = int(''.join(list(map(str, sorted([s1, s2], reverse=True)))))
+    if ans == 1311:
+        minans.append(n)
+print(min(minans))
+    

@@ -1,10 +1,7 @@
-def f(n):
-    if n == 1:
-        return 1
-    if n == 2:
-        return 2
-    if n == 3:
-        return 3
-    return f(n-3)*n
-
-print(f(10))
+count = 0
+for n in range(765432015, 1542613240):
+    first = sum([int(i) for i in str(n)])
+    second = sum([int(i) for i in str(n+1)])
+    if first > second:
+        count += 1
+print(count)

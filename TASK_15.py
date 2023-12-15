@@ -1,8 +1,8 @@
-for a in range(1000, 0, -1):
+for a in range(1000):
     k = 0
-    for x in range(200):
-        for y in range(200):
-            if (7*y + 5*x < 1000) or (x < y) or (a < x):
-                k += 1
-    if k == 40000:
+    for x in range(300):
+        if ((x&28 != 0) or (x&45 != 0)) <= ((x&17 == 0) <= (x&a != 0)):
+            k += 1
+    if k == 300:
         print(a)
+        break
