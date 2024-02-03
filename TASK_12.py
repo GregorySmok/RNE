@@ -1,9 +1,12 @@
-data = '7' * 40 + '9' * 40 + '4' * 50
-while '49' in data or '97' in data or '47' in data:
-    if '47' in data:
-        data = data.replace('47', '74', 1)
-    if '97' in data:
-        data = data.replace('97', '79', 1)
-    if '49' in data:
-        data = data.replace('49', '94', 1)
-print(data)
+m = 0
+for n in range(4, 10000):
+    data = '3' + '5' * n
+    while '333' in data or '555' in data:
+        if '555' in data:
+            data = data.replace('555', '3', 1)
+        else:
+             data = data.replace('333', '5', 1)
+    s = sum([int(i) for i in data])
+    if s > m:
+        m = s
+print(m)
