@@ -1,37 +1,21 @@
-x, y = 0, 0
-mn = 1
-st = input()
-count = 1
-while '#' not in st:
-    if len(st) != 0:
-        if 'for' in st:
-            mn = int(st[st.find('(') + 1:st.find(')')])
+with open('DATA/26.txt') as f:
+    q = []
+    z = []
+    for el in f:
+        if el[-1] == 'Q':
+            q.append(int(el.split()[0]))
         else:
-            if '    ' not in st:
-                mn = 1
-            if st[st.find('(') + 1:st.find(')')].isdigit():
-                count = int(st[st.find('(') + 1:st.find(')')])
-            else:
-                count = 1
-            if 'up' in st:
-                y += 1 * mn * count
-            if 'down' in st:
-                y -= 1 * mn * count
-            if 'left' in st:
-                x -= 1 * mn * count
-            if 'right' in st:
-                x += 1 * mn * count
-    count = 1
-    st = input()
-if x > 0:
-    print(f'move_right({x})' if x != 1 else 'move_right()')
-elif x < 0:
-    print(f'move_left({x})' if x != -1 else 'move_right()')
-else:
-    print()
-if y > 0:
-    print(f'move_up({y})' if y != 1 else 'move_up()')
-elif y < 0:
-    print(f'move_down({abs(y)})' if y != -1 else 'move_down()')
-else:
-    print()
+            z.append(int(el.split()[0]))
+    q.sort()
+    z.sort()
+budget = 100000
+lost = 0
+bought_z = 0
+for el in z:
+    if el <= budget - lost:
+        lost += el
+        bought_z += 1
+for el in q:
+    if el <= budget - lost:
+        lost += el
+print(bought_z, budget - lost)
