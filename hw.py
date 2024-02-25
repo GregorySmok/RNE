@@ -8,7 +8,7 @@ with open('DATA/26.txt') as f:
             z.append(int(el.split()[0]))
     q.sort()
     z.sort()
-budget = 110
+budget = 100000
 lost = 0
 bought_z = 0
 for el in z:
