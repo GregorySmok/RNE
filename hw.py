@@ -2,13 +2,13 @@ with open('DATA/26.txt') as f:
     q = []
     z = []
     for el in f:
-        if el[-1] == 'Q':
+        if el.split()[1] == 'Q':
             q.append(int(el.split()[0]))
         else:
             z.append(int(el.split()[0]))
     q.sort()
     z.sort()
-budget = 100000
+budget = 110
 lost = 0
 bought_z = 0
 for el in z:
