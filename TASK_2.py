@@ -1,6 +1,6 @@
-print("z y x")
-for x in (0, 1):
-    for y in (0, 1):
-        for z in (0, 1):
-            if not((x or y) <= (z == x)):
-                print(x, z, y)
+for a in (0, 1):
+    for b in (0, 1):  # (a→b)∧(b→c)∧(c→d)
+        for c in (0, 1):
+            for d in (0, 1):
+                if (a <= b) and (b <= c) and (c <= d):
+                    print(a, d, c, b)
