@@ -1,18 +1,12 @@
-with open('DATA/1_24.txt') as file:
-    data = file.readline().replace('TT', '*')
-count_TT = 0
-unstr = ''
-minlen = 10000000000000
+with open('DATA/24.txt') as file:
+    data = file.readline()
+alf = 'ABCDEFGHIJKLMNOP'
+count = 0
+mc = 0
 for el in data:
-    if count_TT == 150:
-        minlen = min(minlen, len(unstr))
-        unstr = ''
-        count_TT = 0
-    if el == '*':
-        unstr += 'TT'
-        count_TT += 1
+    if el in alf:
+        count += 1
     else:
-        unstr += el
-print(minlen)
-
-    
+        mc = max(mc, count)
+        count = 0
+print(mc)

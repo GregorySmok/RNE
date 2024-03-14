@@ -1,11 +1,13 @@
-with open('DATA/26 (4).txt') as f:
-    data = [int(i) for i in f]
-updated = [data[0]]
-for i in range(1, len(data) - 1):
-    updated.append(sorted([data[i-1], data[i], data[i + 1]])[1])
-updated.append(data[-1])
-water = 0
+with open('DATA/263.txt') as f:
+    data = sorted([int(i) for i in f])
+v = 7291
+can = []
 for i in range(len(data)):
-    if updated[i] < data[i]:
-        water += data[i] - updated[i]
-print(updated.count(min(updated)), water)
+    if sum(can) + data[i] <= v:
+        can.append(data[i])
+    else:
+        break
+for i in range(len(data)):
+    if sum(can) - can[-1] + data[i] <= 7291:
+        can[-1] = data[i]
+print(len(can), max(can), sum(can))
