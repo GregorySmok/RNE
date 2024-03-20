@@ -1,26 +1,16 @@
-import turtle as t
+from turtle import *
 
-m = 15
-t.dot()
-t.speed(0)
-for i in range(2):
-    t.forward(9*m)
-    t.right(90)
-    t.forward(15*m)
-    t.right(90)
-t.pu()
-t.forward(12*m)
-t.right(90)
-t.pd()
-for i in range(2):
-    t.forward(6*m)
-    t.right(90)
-    t.forward(12*m)
-    t.right(90)
-t.pu()
-t.goto(0 ,0)
-for x in range(13):
-    for y in range(-15, 1):
-        t.goto(x*m, y*m)
-        t.dot()
-t.done()
+tracer(0)
+left(90)
+screensize(5000, 5000)
+k = 60
+right(45)
+for _ in range(6):
+    forward(10 * k)
+    right(60)
+up()
+for x in range(0, 20):
+    for y in range(-20, 9):
+        goto(x * k, y * k)
+        dot(4, 'red')
+done()

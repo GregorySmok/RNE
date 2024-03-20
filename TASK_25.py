@@ -1,10 +1,6 @@
-for i in range[1]:
-    dels = []
-    for dl in range(2, round(i**0.5) + 1):
-        if len(set(dels)) > 3:
-            break
-        if i % dl == 0:
-            dels.append(dl)
-            dels.append(i // dl)
-    if len(set(dels)) == 3:
-        print(i, max(dels))
+from fnmatch import fnmatch
+
+
+for n in range(0, 10**10, 42):
+    if fnmatch(str(n), '48*15*0'):
+        print(n, n/42)

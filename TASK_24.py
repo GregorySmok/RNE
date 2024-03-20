@@ -1,12 +1,13 @@
-with open('DATA/24.txt') as file:
-    data = file.readline()
-alf = 'ABCDEFGHIJKLMNOP'
-count = 0
-mc = 0
+with open('DATA/24 (2).txt') as file:
+    data = ' CABCABABABABCBA'.replace(
+        'BAB', '*').replace('ABA', '*').split('C')
+ml = 0
 for el in data:
-    if el in alf:
-        count += 1
-    else:
-        mc = max(mc, count)
-        count = 0
-print(mc)
+    ln = 0
+    for i in range(len(el)):
+        if el[i] == '*':
+            ln += 1
+        else:
+            ln = 0
+    ml = max(ml, ln)
+print(data)

@@ -1,8 +1,6 @@
-from itertools import product
-
+from itertools import permutations
 count = 0
-num = 0
-for el in product('1234', repeat=5):
-    if el.count('1') == 2:
+for el in permutations('кабинет', r=7):
+    if el[-1] not in ['а', 'и', 'е']:
         count += 1
 print(count)

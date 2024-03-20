@@ -1,7 +1,14 @@
-count = 0
-for n in range(765432015, 1542613240):
-    first = sum([int(i) for i in str(n)])
-    second = sum([int(i) for i in str(n+1)])
-    if first > second:
-        count += 1
-print(count)
+import sys
+sys.setrecursionlimit(10**7)
+
+
+def f(n):
+    if n >= 2024:
+        return 1
+    return f(n + 2) + f(n + 4)
+
+
+m = []
+for k in range(30):
+    m.append(f(k))
+print(m)

@@ -1,12 +1,11 @@
-m = 0
-for n in range(4, 10000):
-    data = '3' + '5' * n
-    while '333' in data or '555' in data:
-        if '555' in data:
-            data = data.replace('555', '3', 1)
-        else:
-             data = data.replace('333', '5', 1)
-    s = sum([int(i) for i in data])
-    if s > m:
-        m = s
-print(m)
+for n in range(4, 100):
+    data = '8' + n * '4'
+    while '4444' in data or '844' in data or '84' in data:
+        if '4444' in data:
+            data = data.replace('4444', '884', 1)
+        if '844' in data:
+            data = data.replace('844', '488', 1)
+        if '84' in data:
+            data = data.replace('84', '3343', 1)
+    if len(data) >= 20:
+        print(len(data) >= 20, n)
