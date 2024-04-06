@@ -1,9 +1,9 @@
-for n in range(100000):
+for n in range(10000):
     n2 = bin(n)[2:]
-    if n % 2 == 0:
-        n2 += '0' * n2.count('0')
+    if n2.count('1') % 2 == 0:
+        n2 = '11' + n2
     else:
-        n2 = '1' * n2.count('1') + n2
-    if int(n2, 2) > 2000:
+        n2 += '00'
+    if int(n2, 2) > 116:
         print(n)
         break

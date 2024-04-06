@@ -1,8 +1,7 @@
-for n in range(200, 0, -1):
-    n4 = ''
-    k = n
-    while k != 0:
-        n4 += str(k % 4)
-        k //= 4
-    if n4[::-1][-3:] == '123':
-        print(n, n4[::-1])
+alf = '0123456789ABCDE'
+data = 3 * 15**1140 + 2 * 15**1025 + 15**923 - 3 * 15**85 + 2 * 15**74 + 3
+d = ''
+while data != 0:
+    d += alf[data % 15]
+    data //= 15
+print(d.count('E'))

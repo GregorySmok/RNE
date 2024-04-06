@@ -3,14 +3,21 @@ from turtle import *
 tracer(0)
 left(90)
 screensize(5000, 5000)
-k = 60
-right(45)
-for _ in range(6):
-    forward(10 * k)
-    right(60)
+m = 50
+forward(9 * m)
+right(90)
+for _ in range(2):
+    forward(3 * m)
+    right(90)
+    forward(3 * m)
+    right(270)
+for _ in range(2):
+    forward(3 * m)
+    right(90)
+forward(9 * m)
 up()
-for x in range(0, 20):
-    for y in range(-20, 9):
-        goto(x * k, y * k)
-        dot(4, 'red')
+for x in range(10):
+    for y in range(10):
+        goto(x * m, y * m)
+        dot()
 done()

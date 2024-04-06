@@ -1,11 +1,7 @@
-for n in range(4, 100):
-    data = '8' + n * '4'
-    while '4444' in data or '844' in data or '84' in data:
-        if '4444' in data:
-            data = data.replace('4444', '884', 1)
-        if '844' in data:
-            data = data.replace('844', '488', 1)
-        if '84' in data:
-            data = data.replace('84', '3343', 1)
-    if len(data) >= 20:
-        print(len(data) >= 20, n)
+data = '7' * 200
+while '7777' in data or '333333' in data:
+    if '333333' in data:
+        data = data.replace('33333', '777', 1)
+    else:
+        data = data.replace('777', '33', 1)
+print(data.count('3'))

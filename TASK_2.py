@@ -1,6 +1,5 @@
-for x in (0, 1):
-    for y in (0, 1):
-        for z in (0, 1):
-            for w in (0, 1):  # ((1≡w)≡(¬((w∧x)∨y)))→z
-                if (((1 == w) == (not ((w and x) or y))) <= z):
-                    print(x, z, y, w)
+for a in (0, 1):
+    for b in (0, 1):
+        for c in (0, 1):  # c∧¬b∨c∧a
+            if c and (not b) or c and a:
+                print(b, c, a)

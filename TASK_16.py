@@ -1,14 +1,10 @@
-import sys
-sys.setrecursionlimit(10**7)
-
-
 def f(n):
-    if n >= 2024:
+    if n <= 1:
         return 1
-    return f(n + 2) + f(n + 4)
+    if n > 1 and n % 3 == 0:
+        return f(n - 1) + f(n - 3)
+    else:
+        return f(n - 2) + 3 * n
 
 
-m = []
-for k in range(30):
-    m.append(f(k))
-print(m)
+print(f(65))
