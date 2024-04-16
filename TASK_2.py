@@ -1,5 +1,6 @@
-for a in (0, 1):
-    for b in (0, 1):
-        for c in (0, 1):  # c∧¬b∨c∧a
-            if c and (not b) or c and a:
-                print(b, c, a)
+for n in (0, 1):
+    for k in (0, 1):
+        for m in (0, 1):
+            for l in (0, 1):
+                if not (not n or k and not m or (l == m)):
+                    print(m, l, k, n)

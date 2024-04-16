@@ -1,10 +1,14 @@
+import sys
+sys.setrecursionlimit(50000)
+
+
 def f(n):
-    if n <= 1:
+    if n == 2000:
+        return 1996947
+    if n <= 12:
         return 1
-    if n > 1 and n % 3 == 0:
-        return f(n - 1) + f(n - 3)
     else:
-        return f(n - 2) + 3 * n
+        return f(n - 1) + n - 2
 
 
-print(f(65))
+print(f(2024) - f(2020))

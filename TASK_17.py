@@ -1,10 +1,10 @@
-with open('DATA/17 (7).txt') as f:
+with open('DATA/17 (8).txt') as f:
     data = [int(i) for i in f]
-    m3 = max(filter(lambda x: len(str(x)) == 3, data))
+    m21 = max(filter(lambda x: x % 21 == 0, data))
 count = 0
-ms = 0
+ms = 1111111111110
 for i in range(len(data) - 1):
-    if (len(str(data[i])) == 3) + (len(str(data[i + 1])) == 3) == 1 and data[i] + data[i + 1] >= m3:
+    if (data[i] > m21) + (data[i + 1] > m21) >= 1:
         count += 1
-        ms = max(ms, data[i] + data[i + 1])
+        ms = min(ms, data[i] + data[i + 1])
 print(count, ms)
