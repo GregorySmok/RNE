@@ -1,8 +1,5 @@
-import string
-alf = string.digits + string.ascii_uppercase
-alf = alf[:29]
-for x in alf:
-    d = int(f'42{x}158', 29) + int(f'16{x}234', 29)
-    if d % 28 == 0:
-        print(d/28)
-        break
+for x in '012345678':
+    for y in '012345678':
+        d = int(f'2{y}66{x}', 9) + int(f'{x}0{y}1', 12)
+        if d % 170 == 0:
+            print(d // 170)

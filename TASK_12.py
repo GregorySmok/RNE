@@ -1,7 +1,13 @@
-data = '7' * 47
-while '2222' in data or '7777' in data:
-    if '2222' in data:
-        data = data.replace('2222', '77', 1)
-    else:
-        data = data.replace('7777', '22', 1)
-print(data)
+d = '>' + '1' * 10 + '2' * 20 + '3' * 30
+while '>1' in d or '>2' in d or '>3' in d:
+    if '>1' in d:
+        d = d.replace('>1', '22>', 1)
+    if '>2' in d:
+        d = d.replace('>2', '2>', 1)
+    if '>3' in d:
+        d = d.replace('>3', '1>', 1)
+s = 0
+for e in d:
+    if e.isdigit():
+        s += int(e)
+print(s)

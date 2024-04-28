@@ -1,14 +1,10 @@
-import sys
-sys.setrecursionlimit(50000)
+from functools import lru_cache
 
 
+@lru_cache
 def f(n):
-    if n == 2000:
-        return 1996947
-    if n <= 12:
+    if n == 1:
         return 1
-    else:
-        return f(n - 1) + n - 2
+    return f(n - 1) * f(n - 1) - f(n - 1) * n + 2 * n
 
-
-print(f(2024) - f(2020))
+print(f(4))
