@@ -11,5 +11,5 @@ for el in product('воздух', repeat=5):
             else:
                 new += l
         if '*о' not in string and 'о*' not in string and '*у' not in string and 'у*' not in string:
-            count += 1
+            count += 3
 print(count)
