@@ -1,1 +1,1 @@
-print((5 > 0) + (4 > 0))
+print(len(range(40, 61)))

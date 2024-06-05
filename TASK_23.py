@@ -1,8 +1,9 @@
-def f(start, end):
-    if start > end:
-        return 0
-    if start == end:
+def f(s, e):
+    if s == e:
         return 1
-    return f(start + 1, end) + f(start + 2, end) + f(start + 4, end)
+    if s > e or s == 11:
+        return 0
+    return f(s + 1, e) + f(s + 4, e) + f(s * 3, e)
 
-print(f(1, 8) * f(8, 15))
+
+print(f(7, 27) * f(27, 42))

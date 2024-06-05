@@ -1,10 +1,3 @@
-with open('DATA/24 (5).txt') as f:
-    data = f.readline()
-for el in 'AEOU':
-    data = data.replace(el, '+')
-for el in 'KLMN':
-    data = data.replace(el, '-')
-data = data.replace('++', '+ +').replace('--', '- -')
-data = data.replace('++', '+ +').replace('--', '- -')
-data = data.split()
-print(len(max(data, key=len)))
+with open('DATA/24 (2).txt') as f:
+    d = f.readline().split('AHAHA')
+print(len(max(d, key=len)) + 8)
