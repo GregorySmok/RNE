@@ -1,17 +1,12 @@
-def dels(n):
-    dls = []
-    for i in range(1, round(n**0.5) + 1):
-        if n % i == 0:
-            if i % 2 != 0:
-                dls.append(i)
-            if n // i % 2 != 0:
-                dls.append(n // i)
-        if len(dls) > 5:
-            return False
-    if len(dls) == 5:
-        return True
-
-
-for num in range(35000000, 40000001):
-    if dels(num):
-        print(num)
+for n in range(45000000, 50000001):
+    dels = []
+    for dl in range(1, round(n**0.5 / 2) + 1):
+        if n % dl == 0:
+            if dl % 2 != 0:
+                dels.append(dl)
+            if n // dl % 2 != 0:
+                dels.append(n // dl)
+        if len(dels) > 5:
+            break
+    if len(dels) == 5:
+        print(n)

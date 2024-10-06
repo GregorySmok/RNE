@@ -1,16 +1,9 @@
-variants = []
-for n in range(4, 10000):
-    d = '8' + '5' * n
-    while '8858' in d or '555' in d:
-        if '8858' in d:
-            d = d.replace('8858', '4', 1)
-        else:
-            d = d.replace('555', '58', 1)
-        if '5858' in d:
-            d = d.replace('5858', '85', 1)
-    s = 0
-    for el in d:
-        s += int(el)
-    if s == 66:
-        variants.append(n)
-print(max(variants))
+d = '1' + '8' * 80
+while '18' in d or '288' in d or '3888' in d:
+    if '18' in d:
+        d = d.replace('18', '2', 1)
+    elif '288' in d:
+        d = d.replace('288', '3', 1)
+    else:
+        d = d.replace('3888', '1', 1)
+print(d)

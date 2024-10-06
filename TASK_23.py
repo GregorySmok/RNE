@@ -1,9 +1,9 @@
 def f(s, e):
     if s == e:
         return 1
-    if s > e or s == 11:
+    if s > e:
         return 0
-    return f(s + 1, e) + f(s + 4, e) + f(s * 3, e)
+    return f(s + 1, e) + f(s + 2, e) + f(s * 2, e)
 
 
-print(f(7, 27) * f(27, 42))
+print(f(3, 10) * f(10, 12))
