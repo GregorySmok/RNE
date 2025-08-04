@@ -1,13 +1,13 @@
 from functools import lru_cache
+import sys
+sys.setrecursionlimit(10**5)
 
 
 @lru_cache(None)
 def f(n):
     if n == 1:
         return 1
-    if n == 2:
-        return 3
-    return f(n - 1) * n + f(n - 2) * (n - 1)
+    return (n - 1) * f(n - 1)
 
 
-print(f(5))
+print(2024*2023 + 2 * 2023)
